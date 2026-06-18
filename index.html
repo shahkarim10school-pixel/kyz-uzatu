@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қыз ұзату - Айгерім</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with gradient -->
+        <div class="header">
+            <div class="decorative-element top-left"></div>
+            <div class="decorative-element top-right"></div>
+            <h1 class="title">Шақыру хат</h1>
+            <div class="poem">
+                <p>Аққудай аялап өсірген,</p>
+                <p>Алтыннан алқа тағынған.</p>
+                <p>Қияға ұшып барады,</p>
+                <p>Қызымыз жаннан табылған.</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Calendar Section -->
+            <div class="calendar-section">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <h2>Июль 2026</h2>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-day-names">
+                            <div class="day-name">Дс</div>
+                            <div class="day-name">Сс</div>
+                            <div class="day-name">Ср</div>
+                            <div class="day-name">Бс</div>
+                            <div class="day-name">Жм</div>
+                            <div class="day-name">Сн</div>
+                            <div class="day-name">Жк</div>
+                        </div>
+                        <div class="calendar-days" id="calendarDays"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Section -->
+            <div class="invitation-text">
+                <p class="greeting">Құрметті бауырлар, туған-туыстар және аяулы достар!</p>
+                <p class="main-text">
+                    Өсіріп баптап, мәпелеген аяулы қызымыз <span class="name">Айгерімді</span> 
+                    қияға қондырып, ұясынан ұшыру сәтіне куә болуға, ақ батамызды бірге беруге 
+                    сіздерді <span class="highlight">Қыз ұзату тойына</span> шақырамыз!
+                </p>
+            </div>
+
+            <!-- Event Details -->
+            <div class="event-details">
+                <div class="detail-item">
+                    <div class="detail-icon">📅</div>
+                    <div class="detail-content">
+                        <div class="detail-label">Күні:</div>
+                        <div class="detail-value">28 июля 2026</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">⏰</div>
+                    <div class="detail-content">
+                        <div class="detail-label">Уақыты:</div>
+                        <div class="detail-value">17:00</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">📍</div>
+                    <div class="detail-content">
+                        <div class="detail-label">Орны:</div>
+                        <div class="detail-value">Қабанбай батыр 224<br>Талдықорған қаласы</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-section">
+                <h3 class="countdown-title">Мереке басталуына</h3>
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">0</div>
+                        <div class="countdown-label">Күн</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">0</div>
+                        <div class="countdown-label">Сағат</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">0</div>
+                        <div class="countdown-label">Минут</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">0</div>
+                        <div class="countdown-label">Секунд</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decorative elements -->
+            <div class="flower-decoration bottom-left"></div>
+            <div class="flower-decoration bottom-right"></div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>⬇️ Сүйіп алып қарыңыз</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
