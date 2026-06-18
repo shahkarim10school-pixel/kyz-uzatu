@@ -75,6 +75,57 @@ function updateCountdown() {
     setInterval(tick, 1000);
 }
 
+// RSVP Functions
+function submitRSVP(response) {
+    // Save to localStorage
+    const rsvpData = JSON.parse(localStorage.getItem('rsvpData')) || { yes: 0, maybe: 0, no: 0 };
+    
+    if (response === 'yes') {
+        rsvpData.yes++;
+    } else if (response === 'maybe') {
+        rsvpData.maybe++;
+    } else if (response === 'no') {
+        rsvpData.no++;
+    }
+    
+    localStorage.setItem('rsvpData', JSON.stringify(rsvpData));
+    updateRSVPDisplay(rsvpData);
+    showRSVPMessage(response);
+}
+
+function updateRSVPDisplay(data) {
+    document.getElementById('yesList').textContent = data.yes;
+    document.getElementById('maybeList').textContent = data.maybe;
+    document.getElementById('noList').textContent = data.no;
+}
+
+function showRSVPMessage(response) {
+    const messageDiv = document.getElementById('rsvpMessage');
+    const messageText = document.getElementById('rsvpMessageText');
+    
+    let message = '';
+    if (response === 'yes') {
+        message = '✅ Сағалаймыз, сіз келетіңіз! Өте қуаныштымыз! 🎉';
+    } else if (response === 'maybe') {
+        message = '❓ Біліңіз, сіз келсеңіз қуанамыз! 💕';
+    } else if (response === 'no') {
+        message = '❌ Өкінішті, бірок бағалаймыз! Келесінде кезектесіңіз 💕';
+    }
+    
+    messageText.textContent = message;
+    messageDiv.style.display = 'block';
+    
+    setTimeout(() => {
+        messageDiv.style.display = 'none';
+    }, 3000);
+}
+
+// Load RSVP data on page load
+function loadRSVPData() {
+    const rsvpData = JSON.parse(localStorage.getItem('rsvpData')) || { yes: 0, maybe: 0, no: 0 };
+    updateRSVPDisplay(rsvpData);
+}
+
 // Intersection Observer for scroll animations
 function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
@@ -90,34 +141,12 @@ function initScrollAnimations() {
         rootMargin: '0px 0px -50px 0px'
     });
 
-    const elements = document.querySelectorAll('.calendar-section, .invitation-text, .event-details, .countdown-section');
+    const elements = document.querySelectorAll('.calendar-section, .countdown-section, .rsvp-section');
     elements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(el);
-    });
-}
-
-// Swipe/Scroll Opacity Animation
-function initSwipeAnimation() {
-    const container = document.querySelector('.container');
-    let lastScrollTop = 0;
-
-    container.addEventListener('scroll', () => {
-        const currentScroll = container.scrollTop;
-
-        lastScrollTop = currentScroll;
-
-        // Apply opacity animation based on scroll position
-        const scrollIndicator = document.querySelector('.scroll-indicator');
-        if (currentScroll > 100) {
-            scrollIndicator.style.opacity = '0';
-            scrollIndicator.style.pointerEvents = 'none';
-        } else {
-            scrollIndicator.style.opacity = '1';
-            scrollIndicator.style.pointerEvents = 'none';
-        }
     });
 }
 
@@ -139,22 +168,36 @@ function initSwipeDetection() {
         const swipeDistance = touchStartY - touchEndY;
         
         if (Math.abs(swipeDistance) > 50) {
-            // Trigger opacity animation
             const container = document.querySelector('.content-wrapper');
             if (swipeDistance > 0) {
-                // Swiped up
                 container.style.animation = 'fadeInUp 0.4s ease-out';
             } else {
-                // Swiped down
                 container.style.animation = 'fadeInUp 0.4s ease-out reverse';
             }
         }
     }
 }
 
+// Scroll indicator handling
+function initScrollIndicator() {
+    const container = document.querySelector('.container');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+
+    container.addEventListener('scroll', () => {
+        const currentScroll = container.scrollTop;
+        if (currentScroll > 100) {
+            scrollIndicator.style.opacity = '0';
+            scrollIndicator.style.pointerEvents = 'none';
+        } else {
+            scrollIndicator.style.opacity = '1';
+            scrollIndicator.style.pointerEvents = 'none';
+        }
+    });
+}
+
 // Add floating animation to decorative elements
 function animateDecorations() {
-    const decorations = document.querySelectorAll('.decorative-element, .flower-decoration');
+    const decorations = document.querySelectorAll('.decorative-element, .flower-decoration, .gold-ornament');
     decorations.forEach((el, index) => {
         el.style.animation = `float${index % 2 === 0 ? '1' : '2'} 6s ease-in-out infinite`;
     });
@@ -165,12 +208,12 @@ const style = document.createElement('style');
 style.textContent = `
     @keyframes float1 {
         0%, 100% { transform: translateY(0px) translateX(0px); }
-        50% { transform: translateY(-20px) translateX(10px); }
+        50% { transform: translateY(-25px) translateX(10px); }
     }
     
     @keyframes float2 {
         0%, 100% { transform: translateY(0px) translateX(0px); }
-        50% { transform: translateY(20px) translateX(-10px); }
+        50% { transform: translateY(25px) translateX(-10px); }
     }
 `;
 document.head.appendChild(style);
@@ -180,9 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
     generateCalendar();
     updateCountdown();
     initScrollAnimations();
-    initSwipeAnimation();
-    animateDecorations();
     initSwipeDetection();
+    initScrollIndicator();
+    animateDecorations();
+    loadRSVPData();
 });
 
 // Handle visibility change to update countdown on tab focus

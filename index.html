@@ -23,65 +23,180 @@
 
         <!-- Main Content -->
         <div class="content-wrapper">
-            <!-- Calendar Section -->
-            <div class="calendar-section">
-                <div class="calendar-container">
-                    <div class="calendar-header">
-                        <h2>Июль 2026</h2>
+            <!-- Two Column Layout -->
+            <div class="main-layout">
+                <!-- Left Column - Text -->
+                <div class="left-column">
+                    <!-- Text Section -->
+                    <div class="invitation-text">
+                        <p class="greeting">Құрметті бауырлар, туған-туыстар және аяулы достар!</p>
+                        <p class="main-text">
+                            Өсіріп баптап, мәпелеген аяулы қызымыз <span class="name">Айгерімді</span> қияға қондырып, ұясынан ұшыру сәтіне куә болуға, ақ батамызды бірге беруге сіздерді <span class="highlight">Қыз ұзату тойына</span> шақырамыз!
+                        </p>
                     </div>
-                    <div class="calendar-grid">
-                        <div class="calendar-day-names">
-                            <div class="day-name">Дс</div>
-                            <div class="day-name">Сс</div>
-                            <div class="day-name">Ср</div>
-                            <div class="day-name">Бс</div>
-                            <div class="day-name">Жм</div>
-                            <div class="day-name">Сн</div>
-                            <div class="day-name">Жк</div>
+
+                    <!-- Event Details -->
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">📅</div>
+                            <div class="detail-content">
+                                <div class="detail-label">Күні:</div>
+                                <div class="detail-value">28 июля 2026</div>
+                            </div>
                         </div>
-                        <div class="calendar-days" id="calendarDays"></div>
+                        <div class="detail-item">
+                            <div class="detail-icon">⏰</div>
+                            <div class="detail-content">
+                                <div class="detail-label">Уақыты:</div>
+                                <div class="detail-value">17:00</div>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">📍</div>
+                            <div class="detail-content">
+                                <div class="detail-label">Орны:</div>
+                                <div class="detail-value">Қабанбай батыр 224<br>Талдықорған қаласы</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Text Section -->
-            <div class="invitation-text">
-                <p class="greeting">Құрметті бауырлар, туған-туыстар және аяулы достар!</p>
-                <p class="main-text">
-                    Өсіріп баптап, мәпелеген аяулы қызымыз <span class="name">Айгерімді</span> 
-                    қияға қондырып, ұясынан ұшыру сәтіне куә болуға, ақ батамызды бірге беруге 
-                    сіздерді <span class="highlight">Қыз ұзату тойына</span> шақырамыз!
-                </p>
-            </div>
+                <!-- Right Column - Girl Illustration & Calendar -->
+                <div class="right-column">
+                    <!-- Kazakh Girl Illustration -->
+                    <div class="girl-illustration-container">
+                        <svg class="kazakh-girl" viewBox="0 0 300 450" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Head -->
+                            <circle cx="150" cy="80" r="38" fill="#d4a574" stroke="#8b6f47" stroke-width="2"/>
+                            
+                            <!-- Hair -->
+                            <path d="M 110 80 Q 110 35 150 30 Q 190 35 190 80" fill="#3d2817" stroke="#2d1810" stroke-width="2"/>
+                            
+                            <!-- Hair ornaments (Saukele-inspired) with gold -->
+                            <defs>
+                                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#c9a961;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <rect x="125" y="25" width="50" height="20" fill="url(#goldGradient)" stroke="#8b6f47" stroke-width="2" rx="5"/>
+                            <circle cx="135" cy="20" r="6" fill="#ffd700" stroke="#c9a961" stroke-width="1"/>
+                            <circle cx="150" cy="18" r="7" fill="#ffd700" stroke="#c9a961" stroke-width="1"/>
+                            <circle cx="165" cy="20" r="6" fill="#ffd700" stroke="#c9a961" stroke-width="1"/>
+                            <circle cx="150" cy="12" r="8" fill="#ff6b9d" stroke="#c9a961" stroke-width="1"/>
+                            
+                            <!-- Face details -->
+                            <circle cx="138" cy="77" r="3.5" fill="#2d1810"/>
+                            <circle cx="162" cy="77" r="3.5" fill="#2d1810"/>
+                            <circle cx="138.5" cy="75" r="1.5" fill="white"/>
+                            <circle cx="162.5" cy="75" r="1.5" fill="white"/>
+                            
+                            <!-- Eyebrows -->
+                            <path d="M 134 70 Q 138 68 142 70" stroke="#2d1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M 158 70 Q 162 68 166 70" stroke="#2d1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            
+                            <!-- Smile -->
+                            <path d="M 142 88 Q 150 92 158 88" stroke="#8b4757" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                            
+                            <!-- Nose -->
+                            <line x1="150" y1="80" x2="150" y2="86" stroke="#8b6f47" stroke-width="2"/>
+                            
+                            <!-- Cheeks -->
+                            <circle cx="125" cy="85" r="6" fill="#ff6b9d" opacity="0.3"/>
+                            <circle cx="175" cy="85" r="6" fill="#ff6b9d" opacity="0.3"/>
+                            
+                            <!-- Traditional Red Dress (Саукеле) -->
+                            <path d="M 115 125 L 110 200 Q 110 215 125 225 L 175 225 Q 190 215 190 200 L 185 125 Z" fill="#c41e3a" stroke="#8b0000" stroke-width="2"/>
+                            
+                            <!-- Gold embroidery on dress - ornate pattern -->
+                            <circle cx="128" cy="145" r="4" fill="#ffd700" opacity="0.9"/>
+                            <circle cx="150" cy="140" r="5" fill="#ffd700" opacity="0.9"/>
+                            <circle cx="172" cy="145" r="4" fill="#ffd700" opacity="0.9"/>
+                            
+                            <circle cx="135" cy="165" r="3.5" fill="#c9a961" opacity="0.8"/>
+                            <circle cx="150" cy="170" r="4" fill="#ffd700" opacity="0.9"/>
+                            <circle cx="165" cy="165" r="3.5" fill="#c9a961" opacity="0.8"/>
+                            
+                            <circle cx="120" cy="185" r="3" fill="#c9a961" opacity="0.7"/>
+                            <circle cx="140" cy="190" r="3" fill="#ffd700" opacity="0.8"/>
+                            <circle cx="160" cy="190" r="3" fill="#ffd700" opacity="0.8"/>
+                            <circle cx="180" cy="185" r="3" fill="#c9a961" opacity="0.7"/>
+                            
+                            <!-- Gold lines pattern -->
+                            <line x1="128" y1="135" x2="128" y2="200" stroke="#ffd700" stroke-width="1.5" opacity="0.6"/>
+                            <line x1="150" y1="130" x2="150" y2="205" stroke="#ffd700" stroke-width="1.5" opacity="0.6"/>
+                            <line x1="172" y1="135" x2="172" y2="200" stroke="#ffd700" stroke-width="1.5" opacity="0.6"/>
+                            
+                            <!-- Belt (Бел) - Gold -->
+                            <rect x="115" y="222" width="70" height="10" fill="url(#goldGradient)" stroke="#8b6f47" stroke-width="1.5"/>
+                            <rect x="118" y="224" width="64" height="3" fill="#ffd700" opacity="0.7"/>
+                            
+                            <!-- Skirt - Darker red with gold decoration -->
+                            <path d="M 125 232 L 108 320 Q 115 340 140 345 L 160 345 Q 185 340 192 320 L 175 232 Z" fill="#8b1e42" stroke="#5c1428" stroke-width="1.5"/>
+                            
+                            <!-- Skirt gold decoration -->
+                            <line x1="130" y1="240" x2="120" y2="320" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+                            <line x1="145" y1="235" x2="135" y2="320" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+                            <line x1="160" y1="235" x2="170" y2="320" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+                            <line x1="170" y1="240" x2="180" y2="320" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+                            
+                            <!-- Sleeves -->
+                            <ellipse cx="100" cy="145" rx="18" ry="35" fill="#a01836" stroke="#5c1428" stroke-width="1.5"/>
+                            <ellipse cx="200" cy="145" rx="18" ry="35" fill="#a01836" stroke="#5c1428" stroke-width="1.5"/>
+                            
+                            <!-- Hands -->
+                            <circle cx="90" cy="175" r="9" fill="#d4a574" stroke="#8b6f47" stroke-width="1.5"/>
+                            <circle cx="210" cy="175" r="9" fill="#d4a574" stroke="#8b6f47" stroke-width="1.5"/>
+                            
+                            <!-- Gold Necklace -->
+                            <path d="M 132 120 Q 150 130 168 120" stroke="#ffd700" stroke-width="3" fill="none"/>
+                            <circle cx="130" cy="119" r="3.5" fill="#ff6b9d"/>
+                            <circle cx="150" cy="128" r="4" fill="#ffd700"/>
+                            <circle cx="170" cy="119" r="3.5" fill="#ff6b9d"/>
+                            
+                            <!-- Gold Earrings -->
+                            <circle cx="108" cy="88" r="4.5" fill="#ffd700" stroke="#c9a961" stroke-width="1"/>
+                            <circle cx="192" cy="88" r="4.5" fill="#ffd700" stroke="#c9a961" stroke-width="1"/>
+                            <line x1="108" y1="93" x2="108" y2="105" stroke="#ffd700" stroke-width="2.5"/>
+                            <line x1="192" y1="93" x2="192" y2="105" stroke="#ffd700" stroke-width="2.5"/>
+                            <circle cx="108" cy="108" r="3" fill="#ff6b9d"/>
+                            <circle cx="192" cy="108" r="3" fill="#ff6b9d"/>
+                            
+                            <!-- Shoes -->
+                            <ellipse cx="135" cy="345" rx="14" ry="10" fill="#3d2817" stroke="#2d1810" stroke-width="1"/>
+                            <ellipse cx="165" cy="345" rx="14" ry="10" fill="#3d2817" stroke="#2d1810" stroke-width="1"/>
+                            <line x1="132" y1="343" x2="132" y2="355" stroke="#ffd700" stroke-width="1" opacity="0.7"/>
+                            <line x1="162" y1="343" x2="162" y2="355" stroke="#ffd700" stroke-width="1" opacity="0.7"/>
+                        </svg>
+                    </div>
 
-            <!-- Event Details -->
-            <div class="event-details">
-                <div class="detail-item">
-                    <div class="detail-icon">📅</div>
-                    <div class="detail-content">
-                        <div class="detail-label">Күні:</div>
-                        <div class="detail-value">28 июля 2026</div>
-                    </div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-icon">⏰</div>
-                    <div class="detail-content">
-                        <div class="detail-label">Уақыты:</div>
-                        <div class="detail-value">17:00</div>
-                    </div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-icon">📍</div>
-                    <div class="detail-content">
-                        <div class="detail-label">Орны:</div>
-                        <div class="detail-value">Қабанбай батыр 224<br>Талдықорған қаласы</div>
+                    <!-- Compact Calendar Section -->
+                    <div class="calendar-section">
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <h2>📅 Июль 2026</h2>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="calendar-day-names">
+                                    <div class="day-name">Дс</div>
+                                    <div class="day-name">Сс</div>
+                                    <div class="day-name">Ср</div>
+                                    <div class="day-name">Бс</div>
+                                    <div class="day-name">Жм</div>
+                                    <div class="day-name">Сн</div>
+                                    <div class="day-name">Жк</div>
+                                </div>
+                                <div class="calendar-days" id="calendarDays"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Countdown Timer -->
             <div class="countdown-section">
-                <h3 class="countdown-title">Мереке басталуына</h3>
+                <h3 class="countdown-title">✨ Мереке басталуына ✨</h3>
                 <div class="countdown-timer">
                     <div class="countdown-item">
                         <div class="countdown-value" id="days">0</div>
@@ -105,9 +220,53 @@
                 </div>
             </div>
 
+            <!-- RSVP Poll Section -->
+            <div class="rsvp-section">
+                <div class="rsvp-header">
+                    <h3 class="rsvp-title">🎉 Сіз келе аласыз ба? 🎉</h3>
+                    <p class="rsvp-subtitle">Өтініш, төмендегі пәндеріңіз туралы хабарлаңыз</p>
+                </div>
+                
+                <div class="rsvp-buttons">
+                    <button class="rsvp-btn yes-btn" id="yesBtn" onclick="submitRSVP('yes')">
+                        <span class="rsvp-emoji">✅</span>
+                        <span class="rsvp-text">Келемін</span>
+                    </button>
+                    <button class="rsvp-btn maybe-btn" id="maybeBtn" onclick="submitRSVP('maybe')">
+                        <span class="rsvp-emoji">❓</span>
+                        <span class="rsvp-text">Білмеймін</span>
+                    </button>
+                    <button class="rsvp-btn no-btn" id="noBtn" onclick="submitRSVP('no')">
+                        <span class="rsvp-emoji">❌</span>
+                        <span class="rsvp-text">Келе алмаймын</span>
+                    </button>
+                </div>
+
+                <div class="rsvp-stats">
+                    <div class="stat-item">
+                        <div class="stat-count" id="yesList">0</div>
+                        <div class="stat-label">Келеміндер</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-count" id="maybeList">0</div>
+                        <div class="stat-label">Білмейтіндер</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-count" id="noList">0</div>
+                        <div class="stat-label">Келе алмаймын</div>
+                    </div>
+                </div>
+
+                <div class="rsvp-message" id="rsvpMessage" style="display: none;">
+                    <p id="rsvpMessageText"></p>
+                </div>
+            </div>
+
             <!-- Decorative elements -->
             <div class="flower-decoration bottom-left"></div>
             <div class="flower-decoration bottom-right"></div>
+            <div class="gold-ornament ornament-1"></div>
+            <div class="gold-ornament ornament-2"></div>
         </div>
 
         <!-- Scroll indicator -->
